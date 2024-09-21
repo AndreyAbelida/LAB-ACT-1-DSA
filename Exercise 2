@@ -1,1 +1,45 @@
+def ohms_law_calculator():
+    print("Ohm's Law Calculator")
+    print("1. Calculate Voltage (V)")
+    print("2. Calculate Current (I)")
+    print("3. Calculate Resistance (R)")
 
+    choice = input("What do you want to calculate? (1/2/3): ")
+
+    if choice == "1":
+        # Calculate Voltage
+        current = float(input("Enter current (I) in amperes: "))
+        resistance = float(input("Enter resistance (R) in ohms: "))
+
+        if resistance == 0:
+            print("Error: Division by zero is not allowed.")
+        else:
+            voltage = current * resistance
+            print(f"Voltage (V) is {voltage} volts.")
+
+    elif choice == "2":
+        # Calculate Current
+        voltage = float(input("Enter voltage (V) in volts: "))
+        resistance = float(input("Enter resistance (R) in ohms: "))
+
+        if resistance == 0:
+            print("Error: Division by zero is not allowed.")
+        else:
+            current = voltage / resistance
+            print(f"Current (I) is {current} amperes.")
+
+    elif choice == "3":
+        voltage = float(input("Enter voltage (V) in volts: "))
+        current = float(input("Enter current (I) in amperes: "))
+
+        if current == 0:
+            print("Error: Division by zero is not allowed.")
+        else:
+            resistance = voltage / current
+            print(f"Resistance (R) is {resistance} ohms.")
+
+    else:
+        print("Invalid choice. Please choose 1, 2, or 3.")
+
+
+ohms_law_calculator()
